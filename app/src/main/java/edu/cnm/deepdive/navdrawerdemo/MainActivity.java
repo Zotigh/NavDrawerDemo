@@ -81,14 +81,17 @@ public class MainActivity extends AppCompatActivity
     Bundle args = new Bundle();
     switch (item.getItemId()) {
       case R.id.fragment_1:
-        loadFragment(new Fragment1(), R.id.fragment_container, "fragment1", null);// this refers to the method at the very bottom
-         break;
+        loadFragment(new Fragment1(), R.id.fragment_container, "fragment1",
+            null);// this refers to the method at the very bottom
+        break;
       case R.id.fragment_2:
-        loadFragment(new Fragment2(), R.id.fragment_container, "fragment2", null);// this refers to the method at the very bottom
+        loadFragment(new Fragment2(), R.id.fragment_container, "fragment2",
+            null);// this refers to the method at the very bottom
         break;
       case R.id.fragment_2a:
         args.putString(Fragment2.BODY_TEXT_KEY, "Here comes another one.");
-        loadFragment(new Fragment2(), R.id.fragment_container, "fragment2a", args);// this refers to the method at the very bottom
+        loadFragment(new Fragment2(), R.id.fragment_container, "fragment2a",
+            args);// this refers to the method at the very bottom
         break;
     }
 
@@ -103,7 +106,8 @@ public class MainActivity extends AppCompatActivity
       fragment.setArguments(args);
     }
     manager.beginTransaction()
-        .add(container, fragment, tag); // tag can be specified null and then it will be
+        .add(container, fragment, tag)
+        .commit(); // tag can be specified null and then it will be
   }
-  
+
 }
